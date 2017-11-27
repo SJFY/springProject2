@@ -1,0 +1,68 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "students",
+            "otherEntityName": "copyuser",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "course"
+        },
+        {
+            "relationshipName": "teacher",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "course"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "rating",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "district",
+            "fieldType": "Districts",
+            "fieldValues": "Champaign"
+        },
+        {
+            "fieldName": "category",
+            "fieldType": "Categories",
+            "fieldValues": "Fitness,Music,Language,IT,Academic,Lifestyle"
+        }
+    ],
+    "changelogDate": "20171112221711",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "course",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no",
+    "enableEntityAudit": true
+}

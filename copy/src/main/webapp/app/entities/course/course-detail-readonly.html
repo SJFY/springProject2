@@ -1,0 +1,537 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active box">
+
+            <img data-ng-src="{{'data:' + vm.picture[0].imageContentType + ';base64,' + vm.picture[0].image}}" style alt="pic image"/>
+            <div class="carousel-caption">
+                <h3>First Text</h3>
+            </div>
+
+        </div>
+        <div class="item box">
+
+            <img data-ng-src="{{'data:' + vm.picture[1].imageContentType + ';base64,' + vm.picture[1].image}}" style alt="pic image"/>
+            <div class="carousel-caption">
+                <h3>Second Text</h3>
+            </div>
+        </div>
+        <div class="item box">
+
+            <img data-ng-src="{{'data:' + vm.picture[2].imageContentType + ';base64,' + vm.picture[2].image}}" style alt="pic image"/>
+            <div class="carousel-caption">
+                <h3>Third Text</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <!--<a data-slide="prev" class="left carousel-control" href="#carousel-example-generic" role="button" >-->
+        <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+    <!--</a>-->
+    <!--<a data-slide="next" class="right carousel-control" href="#carousel-example-generic" role="button" >-->
+        <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+    <!--</a>-->
+</div> <!-- Carousel -->
+
+<!--After carousel-->
+
+<!--
+Responsive Email Template by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+-->
+
+<div id="mailsub" class="notification" align="center">
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="min-width: 320px;"><tr><td align="center" >
+
+
+        <table border="0" cellspacing="0" cellpadding="0" class="table_width_100" width="100%" style="max-width: 980px; min-width: 300px;">
+
+            <!--content 1 -->
+            <tr><td align="center" bgcolor="#fbfcfd">
+                <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                    <tr><td align="center">
+                        <!-- padding --><div style="height: 60px; line-height: 60px; font-size: 10px;"> </div>
+                        <div style="line-height: 44px;">
+
+					<span style="font-family: Arial, Helvetica, sans-serif; font-size: 34px; color: #57697e;">
+						{{vm.course.name}}
+					</span>
+                        </div>
+                        <!-- padding --><div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
+                    </td></tr>
+                    <tr><td align="center">
+                        <div style="line-height: 24px;">
+
+					<span style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #57697e;">
+						{{vm.course.teacher.login}}
+					</span>
+                        </div>
+                        <!-- padding --><div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
+                    </td></tr>
+                    <tr><td align="center">
+                        <div style="line-height: 24px;">
+
+                               <span style="font-family: Arial, Helvetica, sans-serif; font-size: 30px; color: #596167;">
+                                {{vm.course.description}}
+                               </span>
+                        </div>
+                        <!-- padding --><div style="height: 60px; line-height: 60px; font-size: 10px;"> </div>
+                    </td></tr>
+                    <div>
+                        <button type="submit"
+                                ui-sref="copyuser.addc({id:vm.copyuser.id, cid:vm.course.id})"
+                                class="btn btn-primary btn-sm" style="float: right">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            <span>add this course</span>
+                            <span class="hidden-sm-down"></span>
+                        </button>
+                    </div>
+                </table>
+            </td></tr>
+            <!--content 1 END-->
+
+            <!--content 2 -->
+            <tr><td align="center" bgcolor="#ffffff" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #eff2f4;">
+                <table width="94%" border="0" cellspacing="0" cellpadding="0">
+                    <tr><td align="center">
+                        <!-- padding --><div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
+
+                        <div class="mob_100" style="float: left; display: inline-block; width: 33%;">
+                            <table class="mob_100" width="100%" border="0" cellspacing="0" cellpadding="0" align="left" style="border-collapse: collapse;">
+                                <tr><td align="center" style="line-height: 14px; padding: 0 27px;">
+                                    <!-- padding --><div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
+                                    <div style="line-height: 14px;">
+                                        <font face="Arial, Helvetica, sans-serif" size="3" color="#4db3a4" style="font-size: 14px;">
+                                            <strong style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #4db3a4;">
+                                                <a href="#1" target="_blank" style="color: #4db3a4; text-decoration: none;">Price</a>
+                                            </strong></font>
+                                    </div>
+                                    <!-- padding --><div style="height: 18px; line-height: 18px; font-size: 10px;"> </div>
+                                    <div style="line-height: 21px;">
+                                        <font face="Arial, Helvetica, sans-serif" size="3" color="#98a7b9" style="font-size: 14px;">
+								<span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #98a7b9;">
+									{{vm.course.price}}
+								</span></font>
+                                    </div>
+                                </td></tr>
+                            </table>
+                        </div>
+                        <div class="mob_100" style="float: left; display: inline-block; width: 33%;">
+                            <table class="mob_100" width="100%" border="0" cellspacing="0" cellpadding="0" align="left" style="border-collapse: collapse;">
+                                <tr><td align="center" style="line-height: 14px; padding: 0 27px;">
+                                    <!-- padding --><div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
+                                    <div style="line-height: 14px;">
+                                        <font face="Arial, Helvetica, sans-serif" size="3" color="#4db3a4" style="font-size: 14px;">
+                                            <strong style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #4db3a4;">
+                                                <a href="#2" target="_blank" style="color: #4db3a4; text-decoration: none;">Rating</a>
+                                            </strong></font>
+                                    </div>
+                                    <!-- padding --><div style="height: 18px; line-height: 18px; font-size: 10px;"> </div>
+                                    <div style="line-height: 21px;">
+                                        <font face="Arial, Helvetica, sans-serif" size="3" color="#98a7b9" style="font-size: 14px;">
+								<span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #98a7b9;">
+									{{vm.course.rating}} stars
+								</span></font>
+                                    </div>
+                                </td></tr>
+                            </table>
+                        </div>
+                        <div class="mob_100" style="float: left; display: inline-block; width: 33%;">
+                            <table class="mob_100" width="100%" border="0" cellspacing="0" cellpadding="0" align="left" style="border-collapse: collapse;">
+                                <tr><td align="center" style="line-height: 14px; padding: 0 27px;">
+                                    <!-- padding --><div style="height: 40px; line-height: 40px; font-size: 10px;"> </div>
+                                    <div style="line-height: 14px;">
+                                        <font face="Arial, Helvetica, sans-serif" size="3" color="#4db3a4" style="font-size: 14px;">
+                                            <strong style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #4db3a4;">
+                                                <a href="#3" target="_blank" style="color: #4db3a4; text-decoration: none;">District</a>
+                                            </strong></font>
+                                    </div>
+                                    <!-- padding --><div style="height: 18px; line-height: 18px; font-size: 10px;"> </div>
+                                    <div style="line-height: 21px;">
+                                        <font face="Arial, Helvetica, sans-serif" size="3" color="#98a7b9" style="font-size: 14px;">
+								<span style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #98a7b9;">
+									{{vm.course.district}}
+								</span></font>
+                                    </div>
+                                </td></tr>
+                            </table>
+                        </div>
+                    </td></tr>
+                    <tr><td><!-- padding --><div style="height: 80px; line-height: 80px; font-size: 10px;"> </div></td></tr>
+                </table>
+            </td></tr>
+            <!--content 2 END-->
+
+            <!--links -->
+            <tr><td align="center" bgcolor="#ffffff" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #eff2f4;">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr><td align="center">
+                        <!-- padding --><div style="height: 32px; line-height: 32px; font-size: 10px;"> </div>
+                        <table width="80%" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" valign="middle" style="font-size: 12px; line-height: 22px;">
+                                    <font face="Tahoma, Arial, Helvetica, sans-serif" size="2" color="#282f37" style="font-size: 12px;">
+								<span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #5b9bd1;">
+		              <a href="#PRODUCTS" target="_blank" style="color: #5b9bd1; text-decoration: none;">Reviews</a>
+		                  <img src="http://artloglab.com/metromail/images/dot.gif" alt="|" width="9" height="9" class="mob_display_none" />    
+		              <a href="#app" target="_blank" style="color: #5b9bd1; text-decoration: none;">Q&A</a>
+		                  <img src="http://artloglab.com/metromail/images/dot.gif" alt="|" width="9" height="9" class="mob_display_none" />    
+		              <a href="#LAYOUTS" target="_blank" style="color: #5b9bd1; text-decoration: none;">LAYOUTS</a>
+		                  <img src="http://artloglab.com/metromail/images/dot.gif" alt="|" width="9" height="9" class="mob_display_none" />    
+
+              </span></font>
+                                </td>
+                            </tr>
+                        </table>
+                    </td></tr>
+                    <tr><td><!-- padding --><div style="height: 32px; line-height: 32px; font-size: 10px;"> </div></td></tr>
+                </table>
+            </td></tr>
+            <!--links END-->
+
+            <!--Reviews-->
+            <tr><td align="center" bgcolor="#ffffff" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #eff2f4;">
+                <table width="94%" border="0" cellspacing="0" cellpadding="0">
+                    <tr><td align="center">
+                        <!-- padding --><div style="height: 80px; line-height: 80px; font-size: 10px;"> </div>
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr><td align="center">
+                                <font face="Arial, Helvetica, sans-serif" size="3" color="#57697e" style="font-size: 26px;">
+						<span style="font-family: Arial, Helvetica, sans-serif; font-size: 26px; color: #57697e;">
+							Reviews
+						</span></font>
+                            </td></tr>
+                        </table>
+
+                        <ul class="list-unstyled" style="float: left">
+                            <li ng-repeat="comment in vm.coms |orderBy:createdDate:true track by comment.id">
+                                <blockquote>
+                                    <p>{{comment.rating}} stars</p>
+                                    <p>{{comment.review}}</p>
+                                    <footer>{{comment.writter.user.login}},{{comment.createdDate | date:'MMM,d,yyyy'}}
+                                    </footer>
+
+                                </blockquote>
+                            </li>
+                        </ul>
+
+
+                    </td></tr>
+                    <tr><td><!-- padding --><div style="height: 80px; line-height: 80px; font-size: 10px;"> </div></td></tr>
+                </table>
+            </td></tr>
+            <!--content 3 END-->
+
+
+
+            <tr><td>
+                <!-- padding --><div style="height: 80px; line-height: 80px; font-size: 10px;"> </div>
+            </td></tr>
+        </table>
+        <!--[if gte mso 10]>
+        </td></tr>
+        </table>
+        <![endif]-->
+
+    </td></tr>
+    </table>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<button type="submit"
+        ui-sref="course-detail-askque({id:vm.course.id})"
+        class="btn btn-info">
+    <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Ask a question</span>
+</button>
+
+
+<div id="app">
+    <section class="comments" ng-repeat="questionair in vm.questions |orderBy:createdDate:true track by questionair.id">
+        <article>
+            <a ng-if="questionair.profile.avater" ng-click="vm.openFile(questionair.profile.avaterContentType, questionair.profile.avater)">
+                <img data-ng-src="{{'data:' + questionair.profile.avaterContentType + ';base64,' + questionair.profile.avater}}"  alt="copyuser image"/>
+            </a>
+            <h4>{{questionair.user != null ? questionair.user.login : 'Anonymousr User' }}</h4>
+            <time>{{questionair.createdDate}}</time>
+            <time></time>
+            <p>
+                <span class="reply" ng-if="questionair.questionair != null">Reply to: {{questionair.questionair.view}}  <br>by{{questionair.questionair.user != null ? questionair.questionair.user.login : 'Anonymous User'}}</span>
+            </p>
+            <p>{{questionair.view}}</p>
+            <button type="submit"
+                    ui-sref="course-detail-replyque({id:vm.course.id, qid:questionair.id})"
+                    class="btn btn-danger btn-sm">
+                <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Reply</span>
+                <span class="hidden-sm-down"></span>
+            </button>
+        </article>
+
+    </section>
+</div>
+
+<button type="submit"
+        ui-sref="{{ vm.previousState }}"
+        class="btn btn-info">
+    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+</button>
+
+<!--<div>-->
+    <!--<h2><span>Course</span> {{vm.course.id}}</h2>-->
+    <!--<hr>-->
+    <!--<jhi-alert-error></jhi-alert-error>-->
+    <!--<dl class="dl-horizontal jh-entity-details">-->
+        <!--<dt><span>Name</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.course.name}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span>Price</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.course.price}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span>Description</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.course.description}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span>Rating</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.course.rating}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span>District</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.course.district}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span>Category</span></dt>-->
+        <!--<dd>-->
+            <!--<span>{{vm.course.category}}</span>-->
+        <!--</dd>-->
+        <!--<dt><span>Teacher</span></dt>-->
+        <!--<dd>-->
+            <!--{{vm.course.teacher.login}}-->
+        <!--</dd>-->
+    <!--</dl>-->
+    <!--<div class="table-responsive">-->
+        <!--<table class="jh-table table table-striped">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th><span>ID</span></th>-->
+                <!--<th><span>Image</span></th>-->
+                <!--<th><span>Coursepic</span></th>-->
+                <!--<th></th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr ng-repeat="pic in vm.picture track by pic.id">-->
+                <!--<td><a ui-sref="pic-detail({id:pic.id})">{{pic.id}}</a></td>-->
+                <!--<td>-->
+                    <!--<a ng-if="pic.image" ng-click="vm.openFile(pic.imageContentType, pic.image)">-->
+                        <!--<img data-ng-src="{{'data:' + pic.imageContentType + ';base64,' + pic.image}}" style="max-height: 30px;" alt="pic image"/>-->
+                    <!--</a>-->
+                    <!--<span ng-if="pic.image">{{pic.imageContentType}}, {{vm.byteSize(pic.image)}}</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<a ui-sref="course-detail({id:pic.coursepic.id})">{{pic.coursepic.id}}</a>-->
+                <!--</td>-->
+                <!--<td class="text-right">-->
+                    <!--<div class="btn-group flex-btn-group-container">-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="pic-detail({id:pic.id})"-->
+                                <!--class="btn btn-info btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="pic.edit({id:pic.id})"-->
+                                <!--class="btn btn-primary btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="pic.delete({id:pic.id})"-->
+                                <!--class="btn btn-danger btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+<!--<p>Comments</p>-->
+    <!--<div class="table-responsive">-->
+        <!--<table class="jh-table table table-striped">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th><span>ID</span></th>-->
+                <!--<th><span>Rating</span></th>-->
+                <!--<th><span>Review</span></th>-->
+                <!--<th><span>Writter</span></th>-->
+                <!--<th><span>Targetcourse</span></th>-->
+                <!--<th><span>Parent</span></th>-->
+                <!--<th><span>Time</span></th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr ng-repeat="comment in vm.coms |orderBy:createdDate:true track by comment.id">-->
+                <!--<td><a ui-sref="comment-detail({id:comment.id})">{{comment.id}}</a></td>-->
+                <!--<td>{{comment.rating}}</td>-->
+                <!--<td>{{comment.review}}</td>-->
+                <!--<td>-->
+                    <!--<a ui-sref="copyuser-detail({id:comment.writter.id})">{{comment.writter.id}}</a>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<a ui-sref="course-detail({id:comment.targetcourse.id})">{{comment.targetcourse.id}}</a>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<a ui-sref="comment-detail({id:comment.parent.id})">{{comment.parent.id}}</a>-->
+                <!--</td>-->
+                <!--<td>{{comment.createdDate}}</td>-->
+                <!--<td class="text-right">-->
+                    <!--<div class="btn-group flex-btn-group-container">-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="comment-detail({id:comment.id})"-->
+                                <!--class="btn btn-info btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="comment.edit({id:comment.id})"-->
+                                <!--class="btn btn-primary btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="comment.delete({id:comment.id})"-->
+                                <!--class="btn btn-danger btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<h1>Q & A</h1>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="table-responsive">&ndash;&gt;-->
+        <!--&lt;!&ndash;<table class="jh-table table table-striped">&ndash;&gt;-->
+            <!--&lt;!&ndash;<thead>&ndash;&gt;-->
+            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+                <!--&lt;!&ndash;<th><span>ID</span></th>&ndash;&gt;-->
+                <!--&lt;!&ndash;<th><span>View</span></th>&ndash;&gt;-->
+                <!--&lt;!&ndash;<th><span>Course</span></th>&ndash;&gt;-->
+                <!--&lt;!&ndash;<th><span>User</span></th>&ndash;&gt;-->
+                <!--&lt;!&ndash;<th><span>Questionair</span></th>&ndash;&gt;-->
+                <!--&lt;!&ndash;<th><span>Time</span></th>&ndash;&gt;-->
+            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+            <!--&lt;!&ndash;</thead>&ndash;&gt;-->
+            <!--&lt;!&ndash;<tbody>&ndash;&gt;-->
+            <!--&lt;!&ndash;<tr ng-repeat="questionair in vm.questions track by questionair.id">&ndash;&gt;-->
+                <!--&lt;!&ndash;<td><a ui-sref="questionair-detail({id:questionair.id})">{{questionair.id}}</a></td>&ndash;&gt;-->
+                <!--&lt;!&ndash;<td>{{questionair.view}}</td>&ndash;&gt;-->
+                <!--&lt;!&ndash;<td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a ui-sref="course-detail({id:questionair.course.id})">{{questionair.course.id}}</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                <!--&lt;!&ndash;<td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;{{questionair.user != null ? questionair.user.login : 'Anonymousr User' }}&ndash;&gt;-->
+                <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                <!--&lt;!&ndash;<td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a ui-sref="questionair-detail({id:questionair.questionair.id})">{{questionair.questionair.view}} </a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                <!--&lt;!&ndash;<td>{{questionair.createdDate}}</td>&ndash;&gt;-->
+                <!--&lt;!&ndash;<td class="text-right">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="btn-group flex-btn-group-container">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button type="submit"&ndash;&gt;-->
+                                <!--&lt;!&ndash;ui-sref="questionair-detail({id:questionair.id})"&ndash;&gt;-->
+                                <!--&lt;!&ndash;class="btn btn-info btn-sm">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="glyphicon glyphicon-eye-open"></span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="hidden-sm-down"></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button type="submit"&ndash;&gt;-->
+                                <!--&lt;!&ndash;ui-sref="questionair.edit({id:questionair.id})"&ndash;&gt;-->
+                                <!--&lt;!&ndash;class="btn btn-primary btn-sm">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="hidden-sm-down"></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button type="submit"&ndash;&gt;-->
+                                <!--&lt;!&ndash;ui-sref="questionair.delete({id:questionair.id})"&ndash;&gt;-->
+                                <!--&lt;!&ndash;class="btn btn-danger btn-sm">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="glyphicon glyphicon-remove-circle"></span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="hidden-sm-down"></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button type="submit"&ndash;&gt;-->
+                                <!--&lt;!&ndash;ui-sref="course-detail-replyque({id:vm.course.id, qid:questionair.id})"&ndash;&gt;-->
+                                <!--&lt;!&ndash;class="btn btn-danger btn-sm">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Reply</span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="hidden-sm-down"></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</td>&ndash;&gt;-->
+            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+            <!--&lt;!&ndash;</tbody>&ndash;&gt;-->
+        <!--&lt;!&ndash;</table>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+
+
+<!--</div>-->
+<!--<script>-->
+    <!--$('.carousel').carousel({-->
+        <!--interval: 3000-->
+    <!--})-->
+<!--</script>-->
+
+
+<!--&lt;!&ndash;<ul class="list-unstyled">&ndash;&gt;-->
+    <!--&lt;!&ndash;<li ng-repeat="comment in vm.coms |orderBy:createdDate:true track by comment.id">&ndash;&gt;-->
+        <!--&lt;!&ndash;<blockquote>&ndash;&gt;-->
+            <!--&lt;!&ndash;<p>{{comment.rating}} stars</p>&ndash;&gt;-->
+            <!--&lt;!&ndash;<p>{{comment.review}}</p>&ndash;&gt;-->
+            <!--&lt;!&ndash;<footer>{{comment.writter.user.login}},{{comment.createdDate | date:'MMM,d,yyyy'}}&ndash;&gt;-->
+            <!--&lt;!&ndash;</footer>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</blockquote>&ndash;&gt;-->
+    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+
+<!--<h1>comments length is {{vm.tmp}}</h1>-->
+
+<!--<div id="app">-->
+<!--<section class="comments" ng-repeat="questionair in vm.questions |orderBy:createdDate:true track by questionair.id">-->
+    <!--<article>-->
+        <!--<a ng-if="questionair.profile.avater" ng-click="vm.openFile(questionair.profile.avaterContentType, questionair.profile.avater)">-->
+            <!--<img data-ng-src="{{'data:' + questionair.profile.avaterContentType + ';base64,' + questionair.profile.avater}}"  alt="copyuser image"/>-->
+        <!--</a>-->
+        <!--<h4>{{questionair.user != null ? questionair.user.login : 'Anonymousr User' }}</h4>-->
+        <!--<time>{{questionair.createdDate}}</time>-->
+        <!--<time></time>-->
+        <!--<p>-->
+            <!--<span class="reply" ng-if="questionair.questionair != null">Reply to: {{questionair.questionair.view}}  <br>by{{questionair.questionair.user != null ? questionair.questionair.user.login : 'Anonymous User'}}</span>-->
+        <!--</p>-->
+        <!--<p>{{questionair.view}}</p>-->
+        <!--<button type="submit"-->
+                <!--ui-sref="course-detail-replyque({id:vm.course.id, qid:questionair.id})"-->
+                <!--class="btn btn-danger btn-sm">-->
+            <!--<span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Reply</span>-->
+            <!--<span class="hidden-sm-down"></span>-->
+        <!--</button>-->
+        <!--</article>-->
+
+<!--</section>-->
+<!--</div>-->
+

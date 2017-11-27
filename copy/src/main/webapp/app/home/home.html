@@ -1,0 +1,504 @@
+<div id="thumbnail-preview-indicators" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#thumbnail-preview-indicators" data-slide-to="0" class="active">
+            <!--<div class="thumbnail">-->
+                <!--<img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/wdXqHcTwSTmLuKOGz92L_Landscape.jpg">-->
+            <!--</div>-->
+        </li>
+        <li data-target="#thumbnail-preview-indicators" data-slide-to="1">
+            <!--<div class="thumbnail">-->
+                <!--<img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/tU3ptNgGSP6U2fE67Gvy_SYDNEY-162.jpg">-->
+            <!--</div>-->
+        </li>
+        <li data-target="#thumbnail-preview-indicators" data-slide-to="2">
+            <!--<div class="thumbnail">-->
+                <!--<img class="img-responsive" src="https://s3.amazonaws.com/ooomf-com-files/mtNrf7oxS4uSxTzMBWfQ_DSC_0043.jpg">-->
+            <!--</div>-->
+        </li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item slides active">
+            <div class="slide-1"></div>
+            <div class="container">
+                <img src="https://s3.amazonaws.com/ooomf-com-files/wdXqHcTwSTmLuKOGz92L_Landscape.jpg">
+                <div class="carousel-caption">
+                    <h1>New carousel layout</h1>
+                    <p>Responsive thumbnail preview in carousel indicators.</p>
+                    <p><a class="btn btn-lg btn-primary" ui-sref="register" role="button">Sign up today</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item slides">
+            <div class="slide-2"></div>
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Another example headline.</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                    <p><a class="btn btn-lg btn-primary" href="" ng-click="vm.login()" role="button">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item slides">
+            <div class="slide-3"></div>
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>One more for good measure.</h1>
+                    <p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" ui-sref="allcourses" role="button">Browse gallery</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#thumbnail-preview-indicators" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+<!--<div ng-cloak>-->
+    <!--<div class="jumbotron">-->
+       <!--<h1>Tutorhub</h1>-->
+          <!--<p style="padding:40px;"></p>-->
+          <!--<p>Tutorhub builds bridge between tutorial provider and people who want to learn skills. Skill providers earn money by providing tutorials of their skills. People can search on our website to find the skill they want to learn and the level of skill providers they want. </p>-->
+    <!--</div>-->
+    <!--<div class="jumbotron1">-->
+        <!--<div class = "jumbotron1-1">-->
+            <!--<div class = "col-md-4 jumbotron1-1-image">-->
+                <!--<p>this is a pic</p>-->
+            <!--</div>-->
+            <!--<div class="col-md-8 jumbotron1-1-text">-->
+                <!--<p>Ask question and share experiences</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="home-course">-->
+        <!--<div class="col-6 col-md-4">-->
+            <!--<a ng-if="vm.tmp1.picture[0].image" ng-click="vm.openFile(vm.tmp1.picture[0].imageContentType, vm.tmp1.picture[0].image)">-->
+                <!--<img data-ng-src="{{'data:' + vm.tmp1.picture[0].imageContentType + ';base64,' + vm.tmp1.picture[0].image}}" style="max-height: 30px;" alt="pic image"/>-->
+            <!--</a>-->
+                <!--<h4>{{vm.tmp1.name}}</h4>-->
+            <!--</a>-->
+            <!--<p>{{vm.tmp1.name}}</p>-->
+        <!--</div>-->
+        <!--<div class="col-6 col-md-4">-->
+            <!--<a href="">-->
+                <!--<img class=""/>-->
+                <!--<h4>course name</h4>-->
+            <!--</a>-->
+            <!--<p>description</p>-->
+        <!--</div>-->
+        <!--<div class="col-6 col-md-4">-->
+            <!--<a href="">-->
+                <!--<img class=""/>-->
+                <!--<h4>course name</h4>-->
+            <!--</a>-->
+            <!--<p>description</p>-->
+        <!--</div>-->
+        <!--<div class="col-6 col-md-4">-->
+            <!--<a href="">-->
+                <!--<img class=""/>-->
+                <!--<h4>course name</h4>-->
+            <!--</a>-->
+            <!--<p>description</p>-->
+        <!--</div>-->
+    <!--</div>-->
+
+        <!--&lt;!&ndash;-->
+        <!--<div class="col-md-4">-->
+            <!--<span class="hipster img-responsive img-rounded"></span>-->
+        <!--</div>-->
+
+        <!--<div class="col-md-8">-->
+            <!--<h1>Welcome, Java Hipster!</h1>-->
+            <!--<p class="lead">This is your homepage</p>-->
+
+            <!--<div ng-switch="vm.isAuthenticated()">-->
+                <!--<div class="alert alert-success" ng-switch-when="true">-->
+                    <!--You are logged in as user "{{vm.account.login}}".-->
+                <!--</div>-->
+
+                <!--<div class="alert alert-warning" ng-switch-when="false">-->
+                    <!--If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").-->
+                <!--</div>-->
+
+                <!--<div class="alert alert-warning" ng-switch-when="false">-->
+                    <!--You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<p>-->
+                <!--If you have any question on JHipster:-->
+            <!--</p>-->
+
+            <!--<ul>-->
+                <!--<li><a href="http://www.jhipster.tech/" target="_blank" rel="noopener">JHipster homepage</a></li>-->
+                <!--<li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener">JHipster on Stack Overflow</a></li>-->
+                <!--<li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener">JHipster bug tracker</a></li>-->
+                <!--<li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener">JHipster public chat room</a></li>-->
+                <!--<li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener">follow @java_hipster on Twitter</a></li>-->
+            <!--</ul>-->
+
+            <!--<p>-->
+             <!--<span>If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!-->
+            <!--</p>-->
+        <!--</div>-->
+        <!--&ndash;&gt;-->
+
+<!--</div>-->
+
+
+<div class="container" style="margin-top:10px;">
+    <h1>Hot courses around you</h1>
+    <!--<div class="row form-group">-->
+        <div class="col-xs-12 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-image">
+                    <a ui-sref="course-detail-readOnly({id:vm.tmp1.id})">
+                    <!--<img src="http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52cd36aac6bed_1.JPG" class="panel-image-preview" />-->
+                        <img data-ng-src="{{'data:' + vm.tmp1.picture[0].imageContentType + ';base64,' + vm.tmp1.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <h4>{{vm.tmp1.name}}</h4>
+                    <p>{{vm.tmp1.description}}</p>
+                </div>
+                <div class="panel-footer text-center">
+                    <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                    <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                    <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                    <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+                </div>
+            </div>
+        </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-image">
+                <a ui-sref="course-detail-readOnly({id:vm.tmp1.id})">
+                    <!--<img src="http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52cd36aac6bed_1.JPG" class="panel-image-preview" />-->
+                    <img data-ng-src="{{'data:' + vm.tmp1.picture[0].imageContentType + ';base64,' + vm.tmp1.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                </a>
+            </div>
+            <div class="panel-body">
+                <h4>{{vm.tmp1.name}}</h4>
+                <p>{{vm.tmp1.description}}</p>
+            </div>
+            <div class="panel-footer text-center">
+                <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-image">
+                <a ui-sref="course-detail-readOnly({id:vm.tmp1.id})">
+                    <!--<img src="http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52cd36aac6bed_1.JPG" class="panel-image-preview" />-->
+                    <img data-ng-src="{{'data:' + vm.tmp1.picture[0].imageContentType + ';base64,' + vm.tmp1.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                </a>
+            </div>
+            <div class="panel-body">
+                <h4>{{vm.tmp1.name}}</h4>
+                <p>{{vm.tmp1.description}}</p>
+            </div>
+            <div class="panel-footer text-center">
+                <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-image">
+                <a ui-sref="course-detail-readOnly({id:vm.tmp1.id})">
+                    <!--<img src="http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52cd36aac6bed_1.JPG" class="panel-image-preview" />-->
+                    <img data-ng-src="{{'data:' + vm.tmp1.picture[0].imageContentType + ';base64,' + vm.tmp1.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                </a>
+            </div>
+            <div class="panel-body">
+                <h4>{{vm.tmp1.name}}</h4>
+                <p>{{vm.tmp1.description}}</p>
+            </div>
+            <div class="panel-footer text-center">
+                <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-image">
+                <a ui-sref="course-detail-readOnly({id:vm.tmp1.id})">
+                    <!--<img src="http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52cd36aac6bed_1.JPG" class="panel-image-preview" />-->
+                    <img data-ng-src="{{'data:' + vm.tmp1.picture[0].imageContentType + ';base64,' + vm.tmp1.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                </a>
+            </div>
+            <div class="panel-body">
+                <h4>{{vm.tmp1.name}}</h4>
+                <p>{{vm.tmp1.description}}</p>
+            </div>
+            <div class="panel-footer text-center">
+                <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-image">
+                <a ui-sref="course-detail-readOnly({id:vm.tmp1.id})">
+                    <!--<img src="http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52cd36aac6bed_1.JPG" class="panel-image-preview" />-->
+                    <img data-ng-src="{{'data:' + vm.tmp1.picture[0].imageContentType + ';base64,' + vm.tmp1.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                </a>
+            </div>
+            <div class="panel-body">
+                <h4>{{vm.tmp1.name}}</h4>
+                <p>{{vm.tmp1.description}}</p>
+            </div>
+            <div class="panel-footer text-center">
+                <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-image">
+                <a ui-sref="course-detail-readOnly({id:vm.tmp1.id})">
+                    <!--<img src="http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_52cd36aac6bed_1.JPG" class="panel-image-preview" />-->
+                    <img data-ng-src="{{'data:' + vm.tmp1.picture[0].imageContentType + ';base64,' + vm.tmp1.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                </a>
+            </div>
+            <div class="panel-body">
+                <h4>{{vm.tmp1.name}}</h4>
+                <p>{{vm.tmp1.description}}</p>
+            </div>
+            <div class="panel-footer text-center">
+                <a href="#download"><span class="glyphicon glyphicon-download"></span></a>
+                <a href="#facebook"><span class="fa fa-facebook"></span></a>
+                <a href="#twitter"><span class="fa fa-twitter"></span></a>
+                <a href="#share"><span class="glyphicon glyphicon-share-alt"></span></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+<!--</div>-->
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+
+
+<div class='col-md-offset-2 col-md-8'>
+    <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+        <!-- Bottom Carousel Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#quote-carousel" data-slide-to="1"></li>
+            <li data-target="#quote-carousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Carousel Slides / Quotes -->
+        <div class="carousel-inner">
+
+            <!-- Quote 1 -->
+            <div class="item active">
+                <blockquote>
+                    <div class="row">
+                        <div class="col-sm-3 text-center">
+                            <img class="img-circle" src="http://www.reactiongifs.com/r/overbite.gif" style="width: 100px;height:100px;">
+                            <!--<img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" style="width: 100px;height:100px;">-->
+                        </div>
+                        <div class="col-sm-9">
+                            <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit!</p>
+                            <small>Someone famous</small>
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
+            <!-- Quote 2 -->
+            <div class="item">
+                <blockquote>
+                    <div class="row">
+                        <div class="col-sm-3 text-center">
+                            <img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/mijustin/128.jpg" style="width: 100px;height:100px;">
+                        </div>
+                        <div class="col-sm-9">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor nec lacus ut tempor. Mauris.</p>
+                            <small>Someone famous</small>
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
+            <!-- Quote 3 -->
+            <div class="item">
+                <blockquote>
+                    <div class="row">
+                        <div class="col-sm-3 text-center">
+                            <img class="img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/keizgoesboom/128.jpg" style="width: 100px;height:100px;">
+                        </div>
+                        <div class="col-sm-9">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut rutrum elit in arcu blandit, eget pretium nisl accumsan. Sed ultricies commodo tortor, eu pretium mauris.I can really learn a lot and make many good friends as well, my weekends will never be boring again with tutorhub. There are always a lot of things to do in your neighborhood, learn to play an instrument, a new sports. </p>
+                            <small>Someone famous</small>
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- Carousel Buttons Next/Prev -->
+        <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><i class="fa fa-chevron-left"></i></a>
+        <a data-slide="next" href="#quote-carousel" class="right carousel-control"><i class="fa fa-chevron-right"></i></a>
+    </div>
+</div>
+<!--<div class="container" style="margin-top:10px;">-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<h2>Working Star Ratings for Bootstrap 3 <small>Hover and click on a star</small></h2>-->
+        <!--</div>-->
+        <!--<p>we have {{vm.tmpcount}} stars</p>-->
+        <!--<div class="row lead">-->
+            <!--<div id="stars" class="starrr"></div>-->
+            <!--You gave a rating of <span id="count" ng-model="vm.tmpcount">0</span> star(s)-->
+        <!--</div>-->
+
+        <!--<div class="row lead">-->
+            <!--<p>Also you can give a default rating by adding attribute data-rating</p>-->
+            <!--<div id="stars-existing" class="starrr" data-rating='4'></div>-->
+            <!--You gave a rating of <span id="count-existing">4</span> star(s)-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<script type="text/javascript">-->
+    <!--// Starrr plugin (https://github.com/dobtco/starrr)-->
+    <!--var __slice = [].slice;-->
+
+    <!--(function($, window) {-->
+        <!--var Starrr;-->
+
+        <!--Starrr = (function() {-->
+            <!--Starrr.prototype.defaults = {-->
+                <!--rating: void 0,-->
+                <!--numStars: 5,-->
+                <!--change: function(e, value) {}-->
+            <!--};-->
+
+            <!--function Starrr($el, options) {-->
+                <!--var i, _, _ref,-->
+                    <!--_this = this;-->
+
+                <!--this.options = $.extend({}, this.defaults, options);-->
+                <!--this.$el = $el;-->
+                <!--_ref = this.defaults;-->
+                <!--for (i in _ref) {-->
+                    <!--_ = _ref[i];-->
+                    <!--if (this.$el.data(i) != null) {-->
+                        <!--this.options[i] = this.$el.data(i);-->
+                    <!--}-->
+                <!--}-->
+                <!--this.createStars();-->
+                <!--this.syncRating();-->
+                <!--this.$el.on('mouseover.starrr', 'span', function(e) {-->
+                    <!--return _this.syncRating(_this.$el.find('span').index(e.currentTarget) + 1);-->
+                <!--});-->
+                <!--this.$el.on('mouseout.starrr', function() {-->
+                    <!--return _this.syncRating();-->
+                <!--});-->
+                <!--this.$el.on('click.starrr', 'span', function(e) {-->
+                    <!--return _this.setRating(_this.$el.find('span').index(e.currentTarget) + 1);-->
+                <!--});-->
+                <!--this.$el.on('starrr:change', this.options.change);-->
+            <!--}-->
+
+            <!--Starrr.prototype.createStars = function() {-->
+                <!--var _i, _ref, _results;-->
+
+                <!--_results = [];-->
+                <!--for (_i = 1, _ref = this.options.numStars; 1 <= _ref ? _i <= _ref : _i >= _ref; 1 <= _ref ? _i++ : _i&#45;&#45;) {-->
+                    <!--_results.push(this.$el.append("<span class='glyphicon .glyphicon-star-empty'></span>"));-->
+                <!--}-->
+                <!--return _results;-->
+            <!--};-->
+
+            <!--Starrr.prototype.setRating = function(rating) {-->
+                <!--if (this.options.rating === rating) {-->
+                    <!--rating = void 0;-->
+                <!--}-->
+                <!--this.options.rating = rating;-->
+                <!--this.syncRating();-->
+                <!--return this.$el.trigger('starrr:change', rating);-->
+            <!--};-->
+
+            <!--Starrr.prototype.syncRating = function(rating) {-->
+                <!--var i, _i, _j, _ref;-->
+
+                <!--rating || (rating = this.options.rating);-->
+                <!--if (rating) {-->
+                    <!--for (i = _i = 0, _ref = rating - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : &#45;&#45;_i) {-->
+                        <!--this.$el.find('span').eq(i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');-->
+                    <!--}-->
+                <!--}-->
+                <!--if (rating && rating < 5) {-->
+                    <!--for (i = _j = rating; rating <= 4 ? _j <= 4 : _j >= 4; i = rating <= 4 ? ++_j : &#45;&#45;_j) {-->
+                        <!--this.$el.find('span').eq(i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');-->
+                    <!--}-->
+                <!--}-->
+                <!--if (!rating) {-->
+                    <!--return this.$el.find('span').removeClass('glyphicon-star').addClass('glyphicon-star-empty');-->
+                <!--}-->
+            <!--};-->
+
+            <!--return Starrr;-->
+
+        <!--})();-->
+        <!--return $.fn.extend({-->
+            <!--starrr: function() {-->
+                <!--var args, option;-->
+
+                <!--option = arguments[0], args = 2 <= arguments.length ? __slice.call(arguments, 1) : [];-->
+                <!--return this.each(function() {-->
+                    <!--var data;-->
+
+                    <!--data = $(this).data('star-rating');-->
+                    <!--if (!data) {-->
+                        <!--$(this).data('star-rating', (data = new Starrr($(this), option)));-->
+                    <!--}-->
+                    <!--if (typeof option === 'string') {-->
+                        <!--return data[option].apply(data, args);-->
+                    <!--}-->
+                <!--});-->
+            <!--}-->
+        <!--});-->
+    <!--})(window.jQuery, window);-->
+
+    <!--$(function() {-->
+        <!--return $(".starrr").starrr();-->
+    <!--});-->
+
+    <!--$( document ).ready(function() {-->
+
+        <!--$('#stars').on('starrr:change', function(e, value){-->
+            <!--$('#count').html(value);-->
+        <!--});-->
+
+        <!--$('#stars-existing').on('starrr:change', function(e, value){-->
+            <!--$('#count-existing').html(value);-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+<div class="container">
+
+</div>
+
+

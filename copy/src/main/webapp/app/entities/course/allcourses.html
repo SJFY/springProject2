@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container" style="margin-top: 50px; margin-bottom: 20px;">
+    <div class="row">
+        <div class="col-xs-8 no-padding-right">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group pull-right " >
+                    <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="Search your course">
+                    <span  ng-if="!vm.currentSearch" class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                    </span>
+                    <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+
+        <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+            <h1 class="gallery-title">EXPLORE COURSES</h1>
+        </div>
+
+            <div class="col-xs-8 no-padding-right" style="width: 20%; float: right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right " >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="Search your course">
+                        <span  ng-if="!vm.currentSearch" class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                    </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+
+        <div align="center">
+            <a class="btn btn-default" ng-click="vm.filttext.category = ''" role="tab">All courses</a>
+            <a class="btn btn-default" ng-click="vm.filttext.category = 'Fitness'" role="tab">Fitness</a>
+            <a class="btn btn-default" ng-click="vm.filttext.category = 'Music'" role="tab">Music</a>
+            <a class="btn btn-default" ng-click="vm.filttext.category = 'Language'" role="tab">Language</a>
+            <a class="btn btn-default" ng-click="vm.filttext.category = 'IT'" role="tab">IT</a>
+            <a class="btn btn-default" ng-click="vm.filttext.category = 'Academic'" role="tab">Academic</a>
+            <a class="btn btn-default" ng-click="vm.filttext.category = 'Lifestyle'" role="tab">Lifestyle</a>
+        </div>
+    </div>
+</div>
+<!--<h1>we have {{vm.len}} courses right now, choose the right one for you!</h1>-->
+<div class="container" style="margin-top:10px;">
+<div ng-repeat="course in vm.courses | filter: vm.filttext track by course.id">
+    <div class="col-xs-12 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-image">
+                <a ui-sref="course-detail-readOnly({id:course.id})">
+                    <img data-ng-src="{{'data:' + course.picture[0].imageContentType + ';base64,' + course.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                </a>
+            </div>
+            <div class="panel-body">
+                <h4>{{course.name}}</h4>
+                <p>{{course.description}}</p>
+                <div>
+                <button type="submit"
+                        ui-sref="copyuser.addc({id:vm.copyuser.id, cid:course.id})"
+                        class="btn btn-primary btn-sm" style="float: right">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span>add this course</span>
+                    <span class="hidden-sm-down"></span>
+                </button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+<!--<div class="table-responsive">-->
+    <!--<table class="jh-table table table-striped">-->
+        <!--<thead>-->
+        <!--<tr>-->
+            <!--<th><span>ID</span></th>-->
+            <!--<th><span>Name</span></th>-->
+            <!--<th><span>Price</span></th>-->
+            <!--<th><span>Description</span></th>-->
+            <!--<th><span>Rating</span></th>-->
+            <!--<th><span>District</span></th>-->
+            <!--<th><span>Category</span></th>-->
+            <!--<th><span>Teacher</span></th>-->
+            <!--<th></th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr ng-repeat="course in vm.courses | filter: vm.filttext track by course.id ">-->
+            <!--<td><a ui-sref="course-detail-readOnly({id:course.id})">{{course.id}}</a></td>-->
+            <!--<td>{{course.name}}</td>-->
+            <!--<td>{{course.price}}</td>-->
+            <!--<td>{{course.description}}</td>-->
+            <!--<td>{{course.rating}}</td>-->
+            <!--<td>{{course.district}}</td>-->
+            <!--<td>{{course.category}}</td>-->
+            <!--<td>-->
+                <!--{{course.teacher.login}}-->
+            <!--</td>-->
+
+            <!--<td class="text-right">-->
+                <!--<div class="btn-group flex-btn-group-container">-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="course-detail({id:course.id})"-->
+                            <!--class="btn btn-info btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="course.edit({id:course.id})"-->
+                            <!--class="btn btn-primary btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="course.delete({id:course.id})"-->
+                            <!--class="btn btn-danger btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="copyuser.addc({id:vm.copyuser.id, cid:course.id})"-->
+                            <!--class="btn btn-danger btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
+<!--</div>-->
+<!--<div class="table-responsive">-->
+    <!--<table class="jh-table table table-striped">-->
+        <!--<thead>-->
+        <!--<tr>-->
+            <!--<th><span>ID</span></th>-->
+            <!--<th><span>Image</span></th>-->
+            <!--<th><span>Coursepic</span></th>-->
+            <!--<th></th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr ng-repeat="pic in vm.pics track by pic.id">-->
+            <!--<td><a ui-sref="pic-detail({id:pic.id})">{{pic.id}}</a></td>-->
+            <!--<td>-->
+                <!--<a ng-if="pic.image" ng-click="vm.openFile(pic.imageContentType, pic.image)">-->
+                    <!--<img data-ng-src="{{'data:' + pic.imageContentType + ';base64,' + pic.image}}" style="max-height: 30px;" alt="pic image"/>-->
+                <!--</a>-->
+                <!--<span ng-if="pic.image">{{pic.imageContentType}}, {{vm.byteSize(pic.image)}}</span>-->
+            <!--</td>-->
+            <!--<td>-->
+                <!--<a ui-sref="course-detail({id:pic.coursepic.id})">{{pic.coursepic.id}}</a>-->
+            <!--</td>-->
+            <!--<td class="text-right">-->
+                <!--<div class="btn-group flex-btn-group-container">-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="pic-detail({id:pic.id})"-->
+                            <!--class="btn btn-info btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="pic.edit({id:pic.id})"-->
+                            <!--class="btn btn-primary btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="pic.delete({id:pic.id})"-->
+                            <!--class="btn btn-danger btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
+<!--</div>-->
+
+<!--<div class="table-responsive">-->
+    <!--<table class="jh-table table table-striped">-->
+        <!--<thead>-->
+        <!--<tr>-->
+            <!--<th><span>ID</span></th>-->
+            <!--<th><span>Rating</span></th>-->
+            <!--<th><span>Review</span></th>-->
+            <!--<th><span>Writter</span></th>-->
+            <!--<th><span>Targetcourse</span></th>-->
+            <!--<th><span>Parent</span></th>-->
+            <!--<th><span>Created time</span></th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr ng-repeat="comment in vm.comments | orderBy:createdDate:true track by comment.id">-->
+            <!--<td><a ui-sref="comment-detail({id:comment.id})">{{comment.id}}</a></td>-->
+            <!--<td>{{comment.rating}}</td>-->
+            <!--<td>{{comment.review}}</td>-->
+            <!--<td>-->
+                <!--<a ui-sref="copyuser-detail({id:comment.writter.id})">{{comment.writter.id}}</a>-->
+            <!--</td>-->
+            <!--<td>-->
+                <!--<a ui-sref="course-detail({id:comment.targetcourse.id})">{{comment.targetcourse.id}}</a>-->
+            <!--</td>-->
+            <!--<td>-->
+                <!--<a ui-sref="comment-detail({id:comment.parent.id})">{{comment.parent.id}}</a>-->
+            <!--</td>-->
+            <!--<td>{{comment.createdDate}}</td>-->
+            <!--<td class="text-right">-->
+                <!--<div class="btn-group flex-btn-group-container">-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="comment-detail({id:comment.id})"-->
+                            <!--class="btn btn-info btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="comment.edit({id:comment.id})"-->
+                            <!--class="btn btn-primary btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                    <!--<button type="submit"-->
+                            <!--ui-sref="comment.delete({id:comment.id})"-->
+                            <!--class="btn btn-danger btn-sm">-->
+                        <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                        <!--<span class="hidden-sm-down"></span>-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+</body>
+</html>

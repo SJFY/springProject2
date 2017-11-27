@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Comment</span> {{vm.comment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Rating</span></dt>
+        <dd>
+            <span>{{vm.comment.rating}}</span>
+        </dd>
+        <dt><span>Review</span></dt>
+        <dd>
+            <span>{{vm.comment.review}}</span>
+        </dd>
+        <dt><span>Writter</span></dt>
+        <dd>
+            <a ui-sref="copyuser-detail({id:vm.comment.writter.id})">{{vm.comment.writter.id}}</a>
+        </dd>
+        <dt><span>Targetcourse</span></dt>
+        <dd>
+            <a ui-sref="course-detail({id:vm.comment.targetcourse.id})">{{vm.comment.targetcourse.id}}</a>
+        </dd>
+        <dt><span>Parent</span></dt>
+        <dd>
+            <a ui-sref="comment-detail({id:vm.comment.parent.id})">{{vm.comment.parent.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="comment-detail.edit({id:vm.comment.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

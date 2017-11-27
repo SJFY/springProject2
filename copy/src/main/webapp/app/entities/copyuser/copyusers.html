@@ -1,0 +1,401 @@
+    <!--<div class="container-fluid">-->
+        <!--<div class="row">-->
+            <!--<div class="col-xs-4 no-padding-left">-->
+                <!--<button class="btn btn-primary" ui-sref="copyuser.new" >-->
+                    <!--<span class="glyphicon glyphicon-plus"></span>-->
+                    <!--<span class="hidden-xs-down" >-->
+                        <!--Add your avatar-->
+                    <!--</span>-->
+                <!--</button>-->
+            <!--</div>-->
+
+            <!--<div class="col-xs-4 no-padding-left">-->
+                <!--<button class="btn btn-primary" ui-sref="course.new" >-->
+                    <!--<span class="glyphicon glyphicon-plus"></span>-->
+                    <!--<span class="hidden-xs-down" >-->
+                        <!--Add your course-->
+                    <!--</span>-->
+                <!--</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+
+
+
+    <div class="container" style="margin-top: 100px; margin-bottom: 20px;">
+        <div class="row panel">
+            <div class="col-md-8 col-xs-12" style="width:100%" >
+                <!--add link to change avatar-->
+                <a ui-sref="copyuser.edit({id:vm.copyuser.id})">
+                <img ng-if="vm.copyuser != null" data-ng-src="{{'data:' + vm.copyuser.avaterContentType + ';base64,' + vm.copyuser.avater}}" style="border-radius:100%;width:200px;height:200px;float:left;" alt="copyuser image"/>
+                </a>
+                <!--showed anonymous user when not initiated-->
+                <img ng-if="vm.copyuser == null" data-ng-src="{{'data:' + vm.anonys.avaterContentType + ';base64,' + vm.anonys.avater}}" style="border-radius:100%;width:200px;height:200px;float:left;" alt="copyuser image"/>
+                <!--showed when initiated-->
+                <div ng-if="vm.copyuser != null" class="header" style="margin-left:100px;color : #808080; width:70%;float:left;">
+                    <div style="width:70%; float:left">
+                    <h1>{{vm.copyuser.user.login}}</h1>
+
+                    <h5>{{vm.copyuser.user.email}}</h5>
+                    <h4>
+                        <span>course learned by me:</span>
+                        <span ng-repeat="course in vm.copyuser.courses">
+                            <a class="form-control-static" ui-sref="course-detail({id: course.id})">{{course.name}}</a>{{$last ? '' : ', '}}
+                        </span>
+                        <br>
+                    </h4>
+                    <h4>
+                        <span>course taught by me:</span>
+                        <span ng-repeat="course in vm.courses">
+                            <a class="form-control-static" ui-sref="course-detail({id: course.id})">{{course.name}}</a>{{$last ? '' : ', '}}
+                        </span>
+                        <br>
+                    </h4>
+                    </div>
+                    <!-- setting button part-->
+                    <div style="width: 20%; float:left">
+                        <button class="btn btn-primary" ui-sref="settings" >
+                            <span class="glyphicon glyphicon-wrench"></span>
+                            <span class="hidden-xs-down" >
+                        Setting
+                    </span>
+                        </button>
+                    </div>
+                    <!--finished button part-->
+
+                </div>
+                <!--showed when not initiated yet-->
+                <div ng-if="vm.copyuser == null" class="header" style="margin-left:100px;color : #808080; width:70%;float:left;">
+                    <button class="btn btn-primary" ui-sref="copyuser.new" >
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span class="hidden-xs-down" >
+                        Add your avatar here
+                    </span>
+                    </button>
+
+                </div>
+                <!--finished non-initiated-->
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container" style="margin-top:10px;">
+        <h1> I learn these courses</h1>
+        <div ng-repeat="course in vm.copyuser.courses | filter: vm.filttext track by course.id">
+            <div class="col-xs-12 col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-image">
+                        <a ui-sref="course-detail-readOnly({id:course.id})">
+                            <img data-ng-src="{{'data:' + course.picture[0].imageContentType + ';base64,' + course.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        <h4>{{course.name}}</h4>
+                        <p>{{course.description}}</p>
+                        <div >
+                        <button type="submit"
+                                ui-sref="copyuser.removec({id:vm.copyuser.id,cid:course.id})"
+                                class="btn btn-danger btn-sm" style="float:right">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <span class="hidden-sm-down"></span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="comment.newuc({id:vm.copyuser.id, cid:course.id})"
+                                class="btn btn-primary btn-sm" style="float:right">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span>write a review</span>
+                            <span class="hidden-sm-down"></span>
+                        </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<!--=======-->
+
+<!--<h1> I learn these courses</h1>-->
+    <!--<div class="table-responsive">-->
+        <!--<table class="jh-table table table-striped">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th><span>ID</span></th>-->
+                <!--<th><span>Name</span></th>-->
+                <!--<th><span>Price</span></th>-->
+                <!--<th><span>Description</span></th>-->
+                <!--<th><span>Rating</span></th>-->
+                <!--<th><span>District</span></th>-->
+                <!--<th><span>Category</span></th>-->
+                <!--<th><span>Teacher</span></th>-->
+                <!--<th></th>-->
+            <!--</tr>-->
+                <!--<td>{{course.description}}</td>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr ng-repeat="course in vm.copyuser.courses track by course.id">-->
+                <!--<td><a ui-sref="course-detail({id:course.id})">{{course.id}}</a></td>-->
+                <!--<td>{{course.name}}</td>-->
+                <!--<td>{{course.price}}</td>-->
+                <!--<td>{{course.rating}}</td>-->
+                <!--<td>{{course.district}}</td>-->
+                <!--<td>{{course.category}}</td>-->
+                <!--<td>-->
+                    <!--{{course.teacher.login}}-->
+                <!--</td>-->
+                <!--<td class="text-right">-->
+                    <!--<div class="btn-group flex-btn-group-container">-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="course-detail({id:course.id})"-->
+                                <!--class="btn btn-info btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="course.edit({id:course.id})"-->
+                                <!--class="btn btn-primary btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="copyuser.removec({id:vm.copyuser.id,cid:course.id})"-->
+                                <!--class="btn btn-danger btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="comment.newuc({id:vm.copyuser.id, cid:course.id})"-->
+                                <!--class="btn btn-danger btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+<!--&gt;>>>>>> parent of b58f429... change ui of copyuser page-->
+                    <!--</div>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+
+
+    <div class="container" style="margin-top:10px;">
+        <h1>I teach these courses</h1>
+        <div ng-repeat="course in vm.courses | filter: vm.filttext track by course.id">
+            <div class="col-xs-12 col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-image">
+                        <a ui-sref="course-detail({id:course.id})">
+                            <img data-ng-src="{{'data:' + course.picture[0].imageContentType + ';base64,' + course.picture[0].image}}"  class="panel-image-preview"alt="pic image"/>
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        <h4>{{course.name}}</h4>
+                        <p>{{course.description}}</p>
+                        <div >
+                            <button type="submit"
+                                    ui-sref="course-detail({id:course.id})"
+                                    class="btn btn-primary btn-sm" style="float:right">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span>edit your course</span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Reviews</h1>
+        <ul class="list-unstyled" >
+            <li ng-repeat="comment in vm.cucomment |orderBy:createdDate:true track by comment.id">
+                <blockquote>
+                    <p>{{comment.rating}} stars</p>
+                    <p>{{comment.review}}</p>
+                    <footer>{{comment.writter.user.login}},{{comment.createdDate | date:'MMM,d,yyyy'}}
+                    </footer>
+
+                </blockquote>
+                <button type="submit"
+                ui-sref="comment.delete({id:comment.id})"
+                class="btn btn-danger btn-sm">
+                <span class="glyphicon glyphicon-remove-circle"></span>
+                <span class="hidden-sm-down"></span>
+                </button>
+            </li>
+        </ul>
+    </div>
+<!--=======-->
+<!--<h1>I teach these courses</h1>-->
+    <!--<div class="table-responsive">-->
+        <!--<table class="jh-table table table-striped">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th><span>ID</span></th>-->
+                <!--<th><span>Name</span></th>-->
+                <!--<th><span>Price</span></th>-->
+                <!--<th><span>Description</span></th>-->
+                <!--<th><span>Rating</span></th>-->
+                <!--<th><span>District</span></th>-->
+                <!--<th><span>Category</span></th>-->
+                <!--<th><span>Teacher</span></th>-->
+                <!--<th></th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr ng-repeat="course in vm.courses track by course.id">-->
+                <!--<td><a ui-sref="course-detail({id:course.id})">{{course.id}}</a></td>-->
+                <!--<td>{{course.name}}</td>-->
+                <!--<td>{{course.price}}</td>-->
+                <!--<td>{{course.description}}</td>-->
+                <!--<td>{{course.rating}}</td>-->
+                <!--<td>{{course.district}}</td>-->
+                <!--<td>{{course.category}}</td>-->
+                <!--<td>-->
+                    <!--{{course.teacher.login}}-->
+                <!--</td>-->
+                <!--<td class="text-right">-->
+                    <!--<div class="btn-group flex-btn-group-container">-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="course-detail({id:course.id})"-->
+                                <!--class="btn btn-info btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="course.edit({id:course.id})"-->
+                                <!--class="btn btn-primary btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="course.delete({id:course.id})"-->
+                                <!--class="btn btn-danger btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+<!--&gt;>>>>>> parent of b58f429... change ui of copyuser page-->
+                    <!--</div>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+    <!---->
+
+    <!--<div class="table-responsive">-->
+        <!--<table class="jh-table table table-striped">-->
+            <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th><span>ID</span></th>-->
+                    <!--<th><span>Avater</span></th>-->
+                    <!--<th><span>User</span></th>-->
+                    <!--<th><span>Course</span></th>-->
+                    <!--<th></th>-->
+                <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+
+
+
+                    <!--<td><a ui-sref="copyuser-detail({id:copyuser.id})">{{vm.copyuser.id}}</a></td>-->
+                    <!--<td>-->
+                        <!--<a ng-if="vm.copyuser.avater" ng-click="vm.openFile(vm.copyuser.avaterContentType, vm.copyuser.avater)">-->
+                            <!--<img data-ng-src="{{'data:' + vm.copyuser.avaterContentType + ';base64,' + vm.copyuser.avater}}" style="max-height: 30px;" alt="copyuser image"/>-->
+                        <!--</a>-->
+                        <!--<span ng-if="vm.copyuser.avater">{{vm.copyuser.avaterContentType}}, {{vm.byteSize(vm.copyuser.avater)}}</span>-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--{{vm.copyuser.user.login}}-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<span ng-repeat="course in vm.copyuser.courses">-->
+                            <!--<a class="form-control-static" ui-sref="course-detail({id: course.id})">{{course.id}}</a>{{$last ? '' : ', '}}-->
+                        <!--</span>-->
+                    <!--</td>-->
+                    <!--<td class="text-right">-->
+                        <!--<div class="btn-group flex-btn-group-container">-->
+                            <!--<button type="submit"-->
+                                    <!--ui-sref="copyuser-detail({id:vm.copyuser.id})"-->
+                                    <!--class="btn btn-info btn-sm">-->
+                                <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                                <!--<span class="hidden-sm-down"></span>-->
+                            <!--</button>-->
+                            <!--<button type="submit"-->
+                                    <!--ui-sref="copyuser.edit({id:vm.copyuser.id})"-->
+                                    <!--class="btn btn-primary btn-sm">-->
+                                <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                                <!--<span class="hidden-sm-down"></span>-->
+                            <!--</button>-->
+                            <!--<button type="submit"-->
+                                    <!--ui-sref="copyuser.delete({id:vm.copyuser.id})"-->
+                                    <!--class="btn btn-danger btn-sm">-->
+                                <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                                <!--<span class="hidden-sm-down"></span>-->
+                            <!--</button>-->
+                        <!--</div>-->
+                    <!--</td>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+
+    <!--<div class="table-responsive">-->
+        <!--<table class="jh-table table table-striped">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th><span>ID</span></th>-->
+                <!--<th><span>Rating</span></th>-->
+                <!--<th><span>Review</span></th>-->
+                <!--<th><span>Writter</span></th>-->
+                <!--<th><span>Targetcourse</span></th>-->
+                <!--<th><span>Parent</span></th>-->
+                <!--<th></th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr ng-repeat="comment in vm.cucomment track by comment.id">-->
+                <!--<td><a ui-sref="comment-detail({id:comment.id})">{{comment.id}}</a></td>-->
+                <!--<td>{{comment.rating}}</td>-->
+                <!--<td>{{comment.review}}</td>-->
+                <!--<td>-->
+                    <!--<a ui-sref="copyuser-detail({id:comment.writter.id})">{{comment.writter.id}}</a>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<a ui-sref="course-detail({id:comment.targetcourse.id})">{{comment.targetcourse.id}}</a>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<a ui-sref="comment-detail({id:comment.parent.id})">{{comment.parent.id}}</a>-->
+                <!--</td>-->
+                <!--<td class="text-right">-->
+                    <!--<div class="btn-group flex-btn-group-container">-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="comment-detail({id:comment.id})"-->
+                                <!--class="btn btn-info btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="comment.edit({id:comment.id})"-->
+                                <!--class="btn btn-primary btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-pencil"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+                        <!--<button type="submit"-->
+                                <!--ui-sref="comment.delete({id:comment.id})"-->
+                                <!--class="btn btn-danger btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                            <!--<span class="hidden-sm-down"></span>-->
+                        <!--</button>-->
+
+                    <!--</div>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    <!--</div>-->
+</div>

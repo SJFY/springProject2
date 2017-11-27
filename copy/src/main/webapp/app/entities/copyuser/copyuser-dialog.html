@@ -1,0 +1,45 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCopyuserLabel">Change your Avatar</h4>
+    </div>
+
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" ngf-drop ngf-change="vm.setAvater($file, vm.copyuser)" ngf-pattern="'image/*'">
+            <label class="control-label" for="field_avater">Avater</label>
+            <div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setAvater($file, vm.copyuser)" accept="image/*">
+                    Upload
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="avater" id="field_avater"
+                    ng-model="vm.copyuser.avater"
+                    />
+            <input type="hidden" class="form-control" name="avaterContentType" id="field_avaterContentType"
+                    ng-model="vm.copyuser.avaterContentType" />
+        </div>
+
+
+        <div ng-show="editForm.user.$invalid">
+            <p class="help-block"
+                ng-show="editForm.user.$error.required">
+                This field is required.
+            </p>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

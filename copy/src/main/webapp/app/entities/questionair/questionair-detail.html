@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span>Questionair</span> {{vm.questionair.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>View</span></dt>
+        <dd>
+            <span>{{vm.questionair.view}}</span>
+        </dd>
+        <dt><span>Course</span></dt>
+        <dd>
+            <a ui-sref="course-detail({id:vm.questionair.course.id})">{{vm.questionair.course.id}}</a>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.questionair.user.login}}
+        </dd>
+        <dt><span>Questionair</span></dt>
+        <dd>
+            <a ui-sref="questionair-detail({id:vm.questionair.questionair.id})">{{vm.questionair.questionair.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="questionair-detail.edit({id:vm.questionair.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>
